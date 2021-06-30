@@ -1,9 +1,10 @@
 MPU6050_HPP	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^#define MPU6050_HPP$/;"	macro	line:2
-mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^class mpu6050{$/;"	class	line:4
-address	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint16_t address;$/;"	member	line:6	class:mpu6050	access:private
-bus	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    hwlib::i2c_bus & bus;$/;"	member	line:7	class:mpu6050	access:private
-mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        mpu6050( hwlib::i2c_bus & bus, uint16_t address):$/;"	function	line:11	class:mpu6050	access:public	signature:( hwlib::i2c_bus & bus, uint16_t address)
-start_up	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void start_up(){$/;"	function	line:16	class:mpu6050	access:public	signature:()	returns:void 
-accel_X	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        uint16_t accel_X(){$/;"	function	line:23	class:mpu6050	access:public	signature:()	returns:uint16_t 
-write	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void write(uint8_t rg ,uint8_t data){$/;"	function	line:76	class:mpu6050	access:public	signature:(uint8_t rg ,uint8_t data)	returns:void 
-reading	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    unsigned int reading(uint8_t test){$/;"	function	line:81	class:mpu6050	access:public	signature:(uint8_t test)	returns:unsigned int 
+mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^class mpu6050{$/;"	class	line:16
+address	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint16_t address;$/;"	member	line:18	class:mpu6050	access:private
+bus	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    hwlib::i2c_bus & bus;$/;"	member	line:19	class:mpu6050	access:private
+mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        mpu6050( hwlib::i2c_bus & bus, uint16_t address):$/;"	function	line:22	class:mpu6050	access:public	signature:( hwlib::i2c_bus & bus, uint16_t address)
+start_up	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void start_up(){$/;"	function	line:32	class:mpu6050	access:public	signature:()	returns:void 
+accel_X	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        int16_t accel_X(){$/;"	function	line:46	class:mpu6050	access:public	signature:()	returns:int16_t 
+accel_Y	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t accel_Y(){$/;"	function	line:70	class:mpu6050	access:public	signature:()	returns:int16_t 
+accel_Z	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t accel_Z(){$/;"	function	line:92	class:mpu6050	access:public	signature:()	returns:int16_t 
+speed_Test	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t speed_Test(){$/;"	function	line:115	class:mpu6050	access:public	signature:()	returns:int16_t 

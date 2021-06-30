@@ -32,7 +32,6 @@
     <File Name="mpu6050.cpp"/>
     <File Name="mpu6050.hpp"/>
     <File Name="main.cpp"/>
-    <File Name="test.hpp"/>
     <File Name="makefile"/>
   </VirtualDirectory>
   <Settings Type="Dynamic Library">

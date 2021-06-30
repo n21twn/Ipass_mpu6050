@@ -69,7 +69,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class Mpu6050.  
+<p>Class Mpu6 050.  
  <a href="classmpu6050.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mpu6050_8hpp_source.html">mpu6050.hpp</a>&gt;</code></p>
@@ -91,12 +91,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f5f7be8686b9a8ea774f589cb4a9341"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a6f5f7be8686b9a8ea774f589cb4a9341">accel_Z</a> ()</td></tr>
 <tr class="memdesc:a6f5f7be8686b9a8ea774f589cb4a9341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accelerometer Z axis(no parameters)  <a href="classmpu6050.html#a6f5f7be8686b9a8ea774f589cb4a9341">More...</a><br /></td></tr>
 <tr class="separator:a6f5f7be8686b9a8ea774f589cb4a9341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ca23e39236a6b6d57ce23ca838e5bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a9ca23e39236a6b6d57ce23ca838e5bed">speed_Test</a> ()</td></tr>
-<tr class="memdesc:a9ca23e39236a6b6d57ce23ca838e5bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed Test(no parameters)  <a href="classmpu6050.html#a9ca23e39236a6b6d57ce23ca838e5bed">More...</a><br /></td></tr>
-<tr class="separator:a9ca23e39236a6b6d57ce23ca838e5bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2987420c20802beae21fc957233b49c0"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a2987420c20802beae21fc957233b49c0">speed_Test</a> ()</td></tr>
+<tr class="memdesc:a2987420c20802beae21fc957233b49c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed Test(no parameters)  <a href="classmpu6050.html#a2987420c20802beae21fc957233b49c0">More...</a><br /></td></tr>
+<tr class="separator:a2987420c20802beae21fc957233b49c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553ceb179631eabf3eb0d5e085464a4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a553ceb179631eabf3eb0d5e085464a4c">test_function</a> ()</td></tr>
+<tr class="memdesc:a553ceb179631eabf3eb0d5e085464a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smal test function.  <a href="classmpu6050.html#a553ceb179631eabf3eb0d5e085464a4c">More...</a><br /></td></tr>
+<tr class="separator:a553ceb179631eabf3eb0d5e085464a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class Mpu6050. </p>
+<div class="textblock"><p>Class Mpu6 050. </p>
 <dl class="section author"><dt>Author</dt><dd>Nick Teeuwen </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>28/06/2021</dd></dl>
 <p>This is a microcontroller with a accelerometer and a gyroscope on it so you can calculate linaere acceleration and rotating acceleration. First we store the main addres of the Mpu6050 in the class and we store the i2c bus in the class(combined sda pin and scl pin). The appropriate constructors and operators are provided. </p>
@@ -185,8 +188,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ca23e39236a6b6d57ce23ca838e5bed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ca23e39236a6b6d57ce23ca838e5bed">&#9670;&nbsp;</a></span>speed_Test()</h2>
+<a id="a2987420c20802beae21fc957233b49c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2987420c20802beae21fc957233b49c0">&#9670;&nbsp;</a></span>speed_Test()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +198,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void mpu6050::speed_Test </td>
+          <td class="memname">int16_t mpu6050::speed_Test </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -209,7 +212,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Speed Test(no parameters) </p>
-<p>First we get the value of the Z axis(accel_Z) so we can determen our start point. Then we make a start point for the low value and the high value's The low value gets - 1500 and the high value + 1500. So we have a cap at what point the acceleration is higher then the basic air pressure. After all this we do the Start up function to wake the chip. If that is done we start a for loop and first check if the value the given value from the chip is higher then our high_cap or lower then our low_cap. So we can determen wich formule we need to use. After 1 of the 2 is true we quickly save the value of the current Z axis. Then we do the z axis value / 16384(16384 = 1 g force ) so we get the force of the acceleration in g force after. And at last we use the new g force value to calculate the speed in Km/H, 1 G = 34 km/h so we mutiply our value with 34 and we put a ABS over it so the value is alway positive. Extra Note: when we hold the chip horizontal there is already a output of a average of 1g on the chip because of gravity so it calulates that force also with the for of the impact. </p>
+<p>First we get the value of the Z axis(accel_Z) so we can determen our start point. Then we make a start point for the low value and the high value's The low value gets - 1500 and the high value + 1500. So we have a cap at what point the acceleration is higher then the basic air pressure. After all this we do the Start up function to wake the chip. If that is done we start a for loop and first check if the value the given value from the chip is higher then our high_cap or lower then our low_cap. So we can determen wich formule we need to use. After 1 of the 2 is true we quickly save the value of the current Z axis. Extra Note: when we hold the chip horizontal there is already a output of a average of 1g on the chip because of gravity so it should be already around 16000. </p>
 
 </div>
 </div>
@@ -237,7 +240,35 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Startup (no parameters) </p>
-<p>Writes 0 to 0x6B to wake up the <a class="el" href="classmpu6050.html" title="Class Mpu6050.">mpu6050</a> in case it is in sleeping mode so we can communicate with the <a class="el" href="classmpu6050.html" title="Class Mpu6050.">mpu6050</a>. </p>
+<p>Writes 0 to 0x6B to wake up the <a class="el" href="classmpu6050.html" title="Class Mpu6 050.">mpu6050</a> in case it is in sleeping mode so we can communicate with the <a class="el" href="classmpu6050.html" title="Class Mpu6 050.">mpu6050</a>. </p>
+
+</div>
+</div>
+<a id="a553ceb179631eabf3eb0d5e085464a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553ceb179631eabf3eb0d5e085464a4c">&#9670;&nbsp;</a></span>test_function()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mpu6050::test_function </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Smal test function. </p>
+<p>smal function to test if the axis give a value. </p>
 
 </div>
 </div>

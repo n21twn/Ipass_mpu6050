@@ -2,7 +2,7 @@
 \label{classmpu6050}\index{mpu6050@{mpu6050}}
 
 
-Class Mpu6050.  
+Class Mpu6 050.  
 
 
 
@@ -23,12 +23,14 @@ int16\+\_\+t \mbox{\hyperlink{classmpu6050_a50cf9818418b779456c98f574a76b6a6}{ac
 \begin{DoxyCompactList}\small\item\em Accelerometer Y axis(no parameters) \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmpu6050_a6f5f7be8686b9a8ea774f589cb4a9341}{accel\+\_\+Z}} ()
 \begin{DoxyCompactList}\small\item\em Accelerometer Z axis(no parameters) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classmpu6050_a9ca23e39236a6b6d57ce23ca838e5bed}{speed\+\_\+\+Test}} ()
-\begin{DoxyCompactList}\small\item\em Speed Test(no parameters) \end{DoxyCompactList}\end{DoxyCompactItemize}
+int16\+\_\+t \mbox{\hyperlink{classmpu6050_a2987420c20802beae21fc957233b49c0}{speed\+\_\+\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Speed Test(no parameters) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmpu6050_a553ceb179631eabf3eb0d5e085464a4c}{test\+\_\+function}} ()
+\begin{DoxyCompactList}\small\item\em Smal test function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class Mpu6050. 
+Class Mpu6 050. 
 
 \begin{DoxyAuthor}{Author}
 Nick Teeuwen 
@@ -69,17 +71,17 @@ writes the high Y axis Accel address to the chip so we can then read / saves the
 
 Accelerometer Z axis(no parameters) 
 
-writes the high Z axis Accel address to the chip so we can then read / saves the raw data from the Z axis. and saves the high Z in a byte Do the exact same with the low Z accel as with the high Z accel. Combine the 2 bytes to a 16byte instead of 8byte. The first byte gets shifted left because its the high byte. The combined bytes are put in a variable and the variable is returned. Note\+: this is the raw data \mbox{\Hypertarget{classmpu6050_a9ca23e39236a6b6d57ce23ca838e5bed}\label{classmpu6050_a9ca23e39236a6b6d57ce23ca838e5bed}} 
+writes the high Z axis Accel address to the chip so we can then read / saves the raw data from the Z axis. and saves the high Z in a byte Do the exact same with the low Z accel as with the high Z accel. Combine the 2 bytes to a 16byte instead of 8byte. The first byte gets shifted left because its the high byte. The combined bytes are put in a variable and the variable is returned. Note\+: this is the raw data \mbox{\Hypertarget{classmpu6050_a2987420c20802beae21fc957233b49c0}\label{classmpu6050_a2987420c20802beae21fc957233b49c0}} 
 \index{mpu6050@{mpu6050}!speed\_Test@{speed\_Test}}
 \index{speed\_Test@{speed\_Test}!mpu6050@{mpu6050}}
 \doxysubsubsection{\texorpdfstring{speed\_Test()}{speed\_Test()}}
-{\footnotesize\ttfamily void mpu6050\+::speed\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::speed\+\_\+\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Speed Test(no parameters) 
 
-First we get the value of the Z axis(accel\+\_\+\+Z) so we can determen our start point. Then we make a start point for the low value and the high value\textquotesingle{}s The low value gets -\/ 1500 and the high value + 1500. So we have a cap at what point the acceleration is higher then the basic air pressure. After all this we do the Start up function to wake the chip. If that is done we start a for loop and first check if the value the given value from the chip is higher then our high\+\_\+cap or lower then our low\+\_\+cap. So we can determen wich formule we need to use. After 1 of the 2 is true we quickly save the value of the current Z axis. Then we do the z axis value / 16384(16384 = 1 g force ) so we get the force of the acceleration in g force after. And at last we use the new g force value to calculate the speed in Km/H, 1 G = 34 km/h so we mutiply our value with 34 and we put a ABS over it so the value is alway positive. Extra Note\+: when we hold the chip horizontal there is already a output of a average of 1g on the chip because of gravity so it calulates that force also with the for of the impact. \mbox{\Hypertarget{classmpu6050_a62b5b93afa6a09478aabb733e2a52ff0}\label{classmpu6050_a62b5b93afa6a09478aabb733e2a52ff0}} 
+First we get the value of the Z axis(accel\+\_\+\+Z) so we can determen our start point. Then we make a start point for the low value and the high value\textquotesingle{}s The low value gets -\/ 1500 and the high value + 1500. So we have a cap at what point the acceleration is higher then the basic air pressure. After all this we do the Start up function to wake the chip. If that is done we start a for loop and first check if the value the given value from the chip is higher then our high\+\_\+cap or lower then our low\+\_\+cap. So we can determen wich formule we need to use. After 1 of the 2 is true we quickly save the value of the current Z axis. Extra Note\+: when we hold the chip horizontal there is already a output of a average of 1g on the chip because of gravity so it should be already around 16000. \mbox{\Hypertarget{classmpu6050_a62b5b93afa6a09478aabb733e2a52ff0}\label{classmpu6050_a62b5b93afa6a09478aabb733e2a52ff0}} 
 \index{mpu6050@{mpu6050}!start\_up@{start\_up}}
 \index{start\_up@{start\_up}!mpu6050@{mpu6050}}
 \doxysubsubsection{\texorpdfstring{start\_up()}{start\_up()}}
@@ -89,7 +91,17 @@ First we get the value of the Z axis(accel\+\_\+\+Z) so we can determen our star
 
 Startup (no parameters) 
 
-Writes 0 to 0x6B to wake up the \mbox{\hyperlink{classmpu6050}{mpu6050}} in case it is in sleeping mode so we can communicate with the \mbox{\hyperlink{classmpu6050}{mpu6050}}. 
+Writes 0 to 0x6B to wake up the \mbox{\hyperlink{classmpu6050}{mpu6050}} in case it is in sleeping mode so we can communicate with the \mbox{\hyperlink{classmpu6050}{mpu6050}}. \mbox{\Hypertarget{classmpu6050_a553ceb179631eabf3eb0d5e085464a4c}\label{classmpu6050_a553ceb179631eabf3eb0d5e085464a4c}} 
+\index{mpu6050@{mpu6050}!test\_function@{test\_function}}
+\index{test\_function@{test\_function}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{test\_function()}{test\_function()}}
+{\footnotesize\ttfamily void mpu6050\+::test\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Smal test function. 
+
+smal function to test if the axis give a value. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

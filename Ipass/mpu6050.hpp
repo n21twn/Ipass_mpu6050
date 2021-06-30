@@ -7,7 +7,7 @@
 ///  @author Nick Teeuwen
 ///  @date  28/06/2021
 /// \brief
-/// Class Mpu6050
+/// Class Mpu6 050
 /// \details
 /// This is a microcontroller with a accelerometer and a gyroscope on it so you can calculate linaere acceleration and rotating acceleration.
 /// First we store the main addres of the Mpu6050 in the class and we store the i2c bus in the class(combined sda pin and scl pin).
@@ -81,7 +81,6 @@ public:
             return raw_data;
         }
         
-        
 /// \brief
 /// Accelerometer Z axis(no parameters)
 /// \details
@@ -103,42 +102,51 @@ public:
            int16_t raw_data = (first_byte << 8) + second_byte;
             return raw_data;
         }
-        
-        
 /// \brief
 /// Speed Test(no parameters)
 /// \details
-///   First we get the value of the Z axis(accel_Z) so we can determen our start point. Then we make a start point for the low value and the high value's
-/// The low value gets - 1500 and the high value + 1500. So we have a cap at what point the acceleration is higher then the basic air pressure.
-/// After all this we do the Start up function to wake the chip.
-/// If that is done we start a for loop and first check if the value the given value from the chip is higher then our high_cap or lower then our low_cap.
-/// So we can determen wich formule we need to use. After 1 of the 2 is true we quickly save the value of the current Z axis.
-/// Then we do the z axis value / 16384(16384 = 1 g force ) so we get the force of the acceleration in g force after.
-///  And at last we use the new g force value to calculate the speed in Km/H, 1 G  = 34 km/h so we mutiply our value with 34 and we put a ABS over it so the value is alway positive.
-/// Extra Note: when we hold the chip horizontal there is already a output of a average of 1g on the chip because of gravity so it calulates that force also with the for of the impact.
-       void speed_Test(){
-                int16_t  high_cap= accel_Z() +1500 ;
-                int16_t  low_cap = accel_Z() - 1500  ;
+///   Get the value of Z axis with accel_Z and set it as startpoint. then set a startpoint for high and low values
+/// The low value gets - 1500 and the high value + 1500. this is to prevent the airvibration to give us back value's.
+///Then start_up()
+/// Then loop until accel_Z higher or lower is then 1 of the 2 startpoints
+/// if that is the case save the given value and return it
+       int16_t speed_Test(){
+                int16_t  normal_cap = accel_Z();
+                int16_t  high_cap= normal_cap +1000 ;
+                int16_t  low_cap = normal_cap - 1000  ;
                 hwlib::wait_ms(2000); 
                start_up();
-               for(;;){
-                   hwlib::wait_ms(200); 
-                   if(accel_Z()> high_cap){
-                       float tmp = accel_Z();
-                        tmp = (tmp) /16384 ;    
-                       int16_t high_value = tmp * 34;
-                       hwlib::cout<<abs(high_value)<<" KM/h";
-                   }
-                   
-                  if(accel_Z() < low_cap){
-                      float tmp2 = accel_Z();
-                       tmp2 = (tmp2) /16384 ;
-                       int16_t low_value = tmp2 * 34;
-                       hwlib::cout<<abs(low_value)<<" KM/h";
-                   }
-               }
-        }
 
+               for(;;){
+                   if(accel_Z() > high_cap){
+                       int16_t high_value = accel_Z() - normal_cap;
+                       return abs(high_value);
+                   }
+                  if(accel_Z() < low_cap){
+                      int16_t low_value = accel_Z() - normal_cap;
+                      return abs(low_value);
+                   }
+                    hwlib::wait_ms(500); 
+               }
+               
+        }
+        
+/// \brief
+/// Smal test function 
+/// \details
+/// smal function to test if the axis give a value.
+        void test_function(){
+            if(accel_X() == 0){
+                hwlib::cout<< "the X axis is not working";
+                }
+                 if(accel_Y() == 0){
+                hwlib::cout<< "the Y axis is not working";
+                }
+                 if(accel_Z() == 0){
+                hwlib::cout<< "the Z axis is not working";
+                } 
+		hwlib::cout<< "Test works if there are no further message's";           
+            }
     };
 
 // all registers for mpu gyro and accelerometer
@@ -157,4 +165,9 @@ public:
 //  gyro Y l    = 0x46;
 //  gyro Z h    = 0x47;
 //  gyro Z l    = 0x48;
+
+
+// defaulte 16384.0  accel
+//deafaulte 131 gyro
 #endif // MPU6050_HPP
+
