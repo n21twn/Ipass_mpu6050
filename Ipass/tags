@@ -1,10 +1,40 @@
 MPU6050_HPP	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^#define MPU6050_HPP$/;"	macro	line:2
-mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^class mpu6050{$/;"	class	line:16
-address	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint16_t address;$/;"	member	line:18	class:mpu6050	access:private
-bus	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    hwlib::i2c_bus & bus;$/;"	member	line:19	class:mpu6050	access:private
-mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        mpu6050( hwlib::i2c_bus & bus, uint16_t address):$/;"	function	line:22	class:mpu6050	access:public	signature:( hwlib::i2c_bus & bus, uint16_t address)
-start_up	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void start_up(){$/;"	function	line:32	class:mpu6050	access:public	signature:()	returns:void 
-accel_X	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        int16_t accel_X(){$/;"	function	line:46	class:mpu6050	access:public	signature:()	returns:int16_t 
-accel_Y	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t accel_Y(){$/;"	function	line:70	class:mpu6050	access:public	signature:()	returns:int16_t 
-accel_Z	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t accel_Z(){$/;"	function	line:92	class:mpu6050	access:public	signature:()	returns:int16_t 
-speed_Test	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t speed_Test(){$/;"	function	line:115	class:mpu6050	access:public	signature:()	returns:int16_t 
+mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^class mpu6050{$/;"	class	line:15
+address	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint16_t address;$/;"	member	line:17	class:mpu6050	access:private
+bus	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    hwlib::i2c_bus & bus;$/;"	member	line:18	class:mpu6050	access:private
+wakeup	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t wakeup = 0x6B;$/;"	member	line:20	class:mpu6050	access:private
+reset	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t reset = 0x68;$/;"	member	line:21	class:mpu6050	access:private
+accel_conf	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accel_conf = 0x1C;$/;"	member	line:23	class:mpu6050	access:private
+accel_2g	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accel_2g = 0b00000;$/;"	member	line:24	class:mpu6050	access:private
+accel_4g	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accel_4g = 0b01000;$/;"	member	line:25	class:mpu6050	access:private
+accel_8g	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accel_8g = 0b10000;$/;"	member	line:26	class:mpu6050	access:private
+accel_16g	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accel_16g = 0b11000;$/;"	member	line:27	class:mpu6050	access:private
+accelXh	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accelXh = 0x3B;$/;"	member	line:29	class:mpu6050	access:private
+accelXl	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accelXl = 0x3C;$/;"	member	line:30	class:mpu6050	access:private
+accelYh	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accelYh = 0x3D;$/;"	member	line:31	class:mpu6050	access:private
+accelYl	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accelYl = 0x3E;$/;"	member	line:32	class:mpu6050	access:private
+accelZh	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accelZh = 0x3F;$/;"	member	line:33	class:mpu6050	access:private
+accelZl	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t accelZl = 0x40;$/;"	member	line:34	class:mpu6050	access:private
+gyroXh	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t gyroXh = 0x43;$/;"	member	line:36	class:mpu6050	access:private
+gyroXl	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t gyroXl = 0x44;$/;"	member	line:37	class:mpu6050	access:private
+gyroYh	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t gyroYh = 0x45;$/;"	member	line:38	class:mpu6050	access:private
+gyroYl	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t gyroYl = 0x46;$/;"	member	line:39	class:mpu6050	access:private
+gyroZh	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t gyroZh = 0x47;$/;"	member	line:40	class:mpu6050	access:private
+gyroZl	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t gyroZl = 0x48;$/;"	member	line:41	class:mpu6050	access:private
+temp_h	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t temp_h = 0x41;$/;"	member	line:43	class:mpu6050	access:private
+temp_l	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^    uint8_t temp_l = 0x42;$/;"	member	line:44	class:mpu6050	access:private
+mpu6050	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        mpu6050( hwlib::i2c_bus & bus, uint16_t address):$/;"	function	line:46	class:mpu6050	access:public	signature:( hwlib::i2c_bus & bus, uint16_t address)
+start_up	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void start_up(){$/;"	function	line:56	class:mpu6050	access:public	signature:()	returns:void 
+set_range_accel	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void set_range_accel(){$/;"	function	line:65	class:mpu6050	access:public	signature:()	returns:void 
+accel_X	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        int16_t accel_X(){$/;"	function	line:80	class:mpu6050	access:public	signature:()	returns:int16_t 
+accel_Y	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t accel_Y(){$/;"	function	line:104	class:mpu6050	access:public	signature:()	returns:int16_t 
+accel_Z	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t accel_Z(){$/;"	function	line:126	class:mpu6050	access:public	signature:()	returns:int16_t 
+accel_Spike2	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^       int16_t accel_Spike2(){$/;"	function	line:150	class:mpu6050	access:public	signature:()	returns:int16_t 
+read_registers	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void read_registers(uint8_t given_rgst){$/;"	function	line:171	class:mpu6050	access:public	signature:(uint8_t given_rgst)	returns:void 
+test_accel	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void test_accel(){$/;"	function	line:183	class:mpu6050	access:public	signature:()	returns:void 
+test_spike	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^            void test_spike(){$/;"	function	line:196	class:mpu6050	access:public	signature:()	returns:void 
+test_gyro	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        void test_gyro(){$/;"	function	line:212	class:mpu6050	access:public	signature:()	returns:void 
+gyro_Z	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        int16_t gyro_Z(){$/;"	function	line:227	class:mpu6050	access:public	signature:()	returns:int16_t 
+gyro_Y	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        int16_t gyro_Y(){$/;"	function	line:247	class:mpu6050	access:public	signature:()	returns:int16_t 
+gyro_X	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        int16_t gyro_X(){$/;"	function	line:268	class:mpu6050	access:public	signature:()	returns:int16_t 
+temprature	C:\Users\nickt\Ti_block_D\v1oopc-examples\Ipass\mpu6050.hpp	/^        int16_t temprature(){$/;"	function	line:289	class:mpu6050	access:public	signature:()	returns:int16_t 

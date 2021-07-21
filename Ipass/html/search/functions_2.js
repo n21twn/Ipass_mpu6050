@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test_5ffunction_15',['test_function',['../classmpu6050.html#a553ceb179631eabf3eb0d5e085464a4c',1,'mpu6050']]]
+  ['read_5fregisters_25',['read_registers',['../classmpu6050.html#aa9868ef6b0fd146ad40951f40ee94f8d',1,'mpu6050']]]
 ];
